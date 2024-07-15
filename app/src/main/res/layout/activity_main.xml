@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type of System"
+        android:textColor="#3F51B5"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@id/textViewHeightLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView6" />
+    <TextView
+        android:id="@+id/textViewHeightLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Height"
+        android:textColor="#FF9800"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/editTextHeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner" />
+    <EditText
+        android:id="@+id/editTextHeight"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:hint="Enter Height"
+        android:inputType="numberDecimal"
+        android:background="#FFFFFF"
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toTopOf="@id/textViewWeightLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewHeightLabel" />
+    <TextView
+        android:id="@+id/textViewWeightLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weight"
+        android:textColor="#FF9800"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/editTextWeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextHeight" />
+    <EditText
+        android:id="@+id/editTextWeight"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:hint="Enter Weight"
+        android:inputType="numberDecimal"
+        android:background="#FFFFFF"
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toTopOf="@id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewWeightLabel" />
+    <Button
+        android:id="@+id/button"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="Calculate"
+        android:textColor="#FFFFFF"
+        android:background="#4CAF50"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/textViewResult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextWeight" />
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Result"
+        android:textColor="#3F51B5"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/bmiTable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button" />
+    <TableLayout
+        android:id="@+id/bmiTable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stretchColumns="2"
+        android:background="#E0E0E0"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewResult"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5">
+        <TableRow
+            android:background="#FF5722">
+            <TextView
+                android:text="BMI"
+                android:textColor="#FFFFFF"
+                android:padding="8dp" />
+            <TextView
+                android:text="Status"
+                android:textColor="#FFFFFF"
+                android:padding="8dp" />
+        </TableRow>
+        <TableRow
+            android:background="#FFCCBC">
+            <TextView
+                android:text="Under 18.5"
+                android:padding="8dp" />
+            <TextView
+                android:text="Underweight"
+                android:padding="8dp" />
+        </TableRow>
+        <TableRow
+            android:background="#C8E6C9">
+            <TextView
+                android:text="18.5 - 24.9"
+                android:padding="8dp" />
+            <TextView
+                android:text="Normal weight"
+                android:padding="8dp" />
+        </TableRow>
+        <TableRow
+            android:background="#FFF9C4">
+            <TextView
+                android:text="25 - 29.9"
+                android:padding="8dp" />
+            <TextView
+                android:text="Overweight"
+                android:padding="8dp" />
+        </TableRow>
+        <TableRow
+            android:background="#FFCDD2">
+            <TextView
+                android:text="30 and above"
+                android:padding="8dp" />
+            <TextView
+                android:text="Obesity"
+                android:padding="8dp" />
+        </TableRow>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
